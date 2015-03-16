@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <title></title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../dist/bundle.js"></script>
+<body>
+    <div id="hexview"></div>
+    <input type="file" id="file" />
+    <script type="text/javascript">
+        $(function () {
+            $('#hexview').hexjs();
+            
+            function readFile(file, callback) {
+                var reader = new FileReader();
+                reader.onload = function () {
+                    console.log(reader.result);
+                    callback(reader.result);
+                };
+                reader.readAsArrayBuffer( file );
+            }
+            
+            function initHexjs(buffer) {
+                console.log('initHexjs');
+            }
+            
+            $('#file').change(function (e) {
+                readFile( e.target.files[0], function (buffer) {
+                    initHexjs(buffer);
+                } );
+            });
+            
+            readFile( $('#file')[0].files[0], function (buffer) {
+                initHexjs(buffer);
+            } );
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "name": "hexjs",
+  "version": "1.0.0",
+  "description": "HTML Hex Viewer",
+  "main": "./src/hex.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tasior/hex.js.git"
+  },
+  "author": "Jacek Górka <jacek.gorka2@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tasior/hex.js/issues"
+  },
+  "homepage": "https://github.com/tasior/hex.js",
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "browserify-shim": "^3.8.3",
+    "gulp": "^3.8.11"
+  },
+  "browser": {},
+  "browserify-shim": {
+    "jquery": "global:jQuery"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "dependencies": {
+    "underscore.string": "^3.0.3"
+  }
+}
